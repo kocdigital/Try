@@ -23,4 +23,5 @@ jobs:
       with:
         name: BClassLib
         path: "./BClassLib/bin/Release/BClassLib.${{ github.event.release.tag_name }}.nupkg"
-   
+    - name: Publish NuGet Package
+      run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.TRYSECRET }} --source https://api.nuget.org/v3/index.json --no-symbols true
