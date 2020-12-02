@@ -21,6 +21,11 @@ jobs:
     - name: Archive NuGet Package
       uses: actions/upload-artifact@v1
       with:
-        name: packages
-        path: "**/*.nupkg"
+        name: BClassLib
+        path: "./BClassLib/bin/Release/BClassLib.${{ github.event.release.tag_name }}.nupkg"
+    - name: Archive NuGet Package
+      uses: actions/upload-artifact@v1
+      with:
+        name: BClassLibStandart
+        path: "./BClassLibStandart/bin/Release/BClassLibStandart.${{ github.event.release.tag_name }}.nupkg"
    
